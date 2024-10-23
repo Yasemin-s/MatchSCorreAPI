@@ -1,0 +1,17 @@
+C:\Users\yasem\OneDrive\Masaüstü\MobilAPI\MatchS.Core.API\MatchS.Core.Service\bin\Debug\net8.0\MatchS.Core.Service.deps.json
+C:\Users\yasem\OneDrive\Masaüstü\MobilAPI\MatchS.Core.API\MatchS.Core.Service\bin\Debug\net8.0\MatchS.Core.Service.dll
+C:\Users\yasem\OneDrive\Masaüstü\MobilAPI\MatchS.Core.API\MatchS.Core.Service\bin\Debug\net8.0\MatchS.Core.Service.pdb
+C:\Users\yasem\OneDrive\Masaüstü\MobilAPI\MatchS.Core.API\MatchS.Core.Service\obj\Debug\net8.0\MatchS.Core.Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\yasem\OneDrive\Masaüstü\MobilAPI\MatchS.Core.API\MatchS.Core.Service\obj\Debug\net8.0\MatchS.Core.Service.AssemblyInfoInputs.cache
+C:\Users\yasem\OneDrive\Masaüstü\MobilAPI\MatchS.Core.API\MatchS.Core.Service\obj\Debug\net8.0\MatchS.Core.Service.AssemblyInfo.cs
+C:\Users\yasem\OneDrive\Masaüstü\MobilAPI\MatchS.Core.API\MatchS.Core.Service\obj\Debug\net8.0\MatchS.Core.Service.csproj.CoreCompileInputs.cache
+C:\Users\yasem\OneDrive\Masaüstü\MobilAPI\MatchS.Core.API\MatchS.Core.Service\obj\Debug\net8.0\MatchS.Core.Service.dll
+C:\Users\yasem\OneDrive\Masaüstü\MobilAPI\MatchS.Core.API\MatchS.Core.Service\obj\Debug\net8.0\refint\MatchS.Core.Service.dll
+C:\Users\yasem\OneDrive\Masaüstü\MobilAPI\MatchS.Core.API\MatchS.Core.Service\obj\Debug\net8.0\MatchS.Core.Service.pdb
+C:\Users\yasem\OneDrive\Masaüstü\MobilAPI\MatchS.Core.API\MatchS.Core.Service\obj\Debug\net8.0\ref\MatchS.Core.Service.dll
+C:\Users\yasem\OneDrive\Masaüstü\MobilAPI\MatchS.Core.API\MatchS.Core.Service\bin\Debug\net8.0\MatchS.Core.Data.dll
+C:\Users\yasem\OneDrive\Masaüstü\MobilAPI\MatchS.Core.API\MatchS.Core.Service\bin\Debug\net8.0\MatchS.Core.Entity.dll
+C:\Users\yasem\OneDrive\Masaüstü\MobilAPI\MatchS.Core.API\MatchS.Core.Service\bin\Debug\net8.0\MatchS.Core.Data.pdb
+C:\Users\yasem\OneDrive\Masaüstü\MobilAPI\MatchS.Core.API\MatchS.Core.Service\bin\Debug\net8.0\MatchS.Core.Entity.pdb
+C:\Users\yasem\OneDrive\Masaüstü\MobilAPI\MatchS.Core.API\MatchS.Core.Service\obj\Debug\net8.0\MatchS.Core.Service.csproj.AssemblyReference.cache
+C:\Users\yasem\OneDrive\Masaüstü\MobilAPI\MatchS.Core.API\MatchS.Core.Service\obj\Debug\net8.0\MatchS.Core.Service.csproj.CopyComplete

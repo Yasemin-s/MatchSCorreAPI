@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "aYx9BubYZfbHyde8DkPjnElVerBTA8z0HQegDfzXAxQ=",
+  "Source": "MatchS.Core.API",
+  "BasePath": "_content/MatchS.Core.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

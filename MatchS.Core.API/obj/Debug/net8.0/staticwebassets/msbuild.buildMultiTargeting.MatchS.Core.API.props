@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\MatchS.Core.API.props" />
+</Project>
