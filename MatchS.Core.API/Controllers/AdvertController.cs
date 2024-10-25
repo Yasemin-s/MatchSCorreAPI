@@ -2,10 +2,8 @@
 using MatchS.Core.Common.City;
 using MatchS.Core.Entity.Core;
 using MatchS.Core.Entity.DTO.AdvertDTO;
-using MatchS.Core.Entity.DTO.Cities;
-using MatchS.Core.Entity.DTO.UserDTO;
+using MatchS.Core.Entity.DTO.CommentDTO;
 using MatchS.Core.Service.Interfaces;
-using MatchS.Core.Service.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
@@ -22,8 +20,6 @@ namespace MatchS.Core.API.Controllers
         private readonly IMapper _mapper;
         private readonly ICityCommon _cityCommon;
 
-
-
         public AdvertController(ICityCommon cityCommon, IAdvertService advertService, IMapper mapper, IUserService userService)
         {
             _advertService = advertService;
@@ -32,26 +28,21 @@ namespace MatchS.Core.API.Controllers
             _cityCommon = cityCommon;
         }
 
-        //[HttpGet("Cities")]
-        //public async Task<IActionResult> GetCity()
-        //{
-        //    var cityData = _configuration.GetSection("CityRelation").Get<CityRelation>();
-
-        //    return Ok(await _advertService.GetFilterListAsync(x => x.IsActive == true));
-        //}
-
         [HttpGet("MyAdverts")]
         public async Task<IActionResult> MyAdverts()
         {
             int id = Convert.ToInt32(User.FindFirstValue(ClaimTypes.NameIdentifier));
-            var cityData = await _cityCommon.GetCityInformation(id);
-            var advertList = await _advertService.GetFilterListByNoTrackAsync(x => x.IsActive == true && x.UserId == id);
-            var advertListDTO = _mapper.Map<List<ListAdvertDTO>>(advertList);
+            var advertList = await _advertService.GetAdvertsWithComments();
+            var modifiedAdverts = advertList.Where(x => x.UserId == id);
+            var advertListDTO = _mapper.Map<List<ListAdvertDTO>>(modifiedAdverts);
             foreach (var advertDataDTO in advertListDTO)
             {
+                var cityData = _cityCommon.GetCityInformation(advertDataDTO.CityId, advertDataDTO.DistrictId);
                 advertDataDTO.CityId = cityData.cityName;
                 advertDataDTO.DistrictId = cityData.districtName;
+                advertDataDTO.Comments = _mapper.Map<List<ListCommentDTO>>(advertDataDTO.Comments);
             }
+
             return Ok(advertListDTO);
         }
 
@@ -61,21 +52,23 @@ namespace MatchS.Core.API.Controllers
             int id = Convert.ToInt32(User.FindFirstValue(ClaimTypes.NameIdentifier));
             var userData = await _userService.GetFirstOrDefaultAsync(u => u.Id == id);
             var city = userData.CityId;
-            var advertList = await _advertService.GetFilterListByNoTrackAsync(x => x.IsActive == true && x.CityId == city);
-            var advertListDTO = _mapper.Map<List<ListAdvertDTO>>(advertList);
+            var advertList = await _advertService.GetAdvertsWithComments();
+            var modifiedAdverts = advertList.Where(x => x.UserId == id);
+            var advertListDTO = _mapper.Map<List<ListAdvertDTO>>(modifiedAdverts);
             var cityData = await _cityCommon.GetCityInformation(id);
 
             foreach (var advertDataDTO in advertListDTO)
             {
                 advertDataDTO.CityId = cityData.cityName;
                 advertDataDTO.DistrictId = cityData.districtName;
+                advertDataDTO.Comments = _mapper.Map<List<ListCommentDTO>>(advertDataDTO.Comments);
             }
             return Ok(advertListDTO);
         }
         [HttpGet("GetAdverts")]
         public async Task<IActionResult> GetAdverts()
         {
-            var advertList = await _advertService.GetFilterListByNoTrackAsync(x => x.IsActive == true);
+            var advertList = await _advertService.GetAdvertsWithComments();
             var advertListDTO = _mapper.Map<List<ListAdvertDTO>>(advertList);
 
             foreach (var advertDataDTO in advertListDTO)
@@ -84,6 +77,7 @@ namespace MatchS.Core.API.Controllers
 
                 advertDataDTO.CityId = cityData.cityName;
                 advertDataDTO.DistrictId = cityData.districtName;
+                advertDataDTO.Comments = _mapper.Map<List<ListCommentDTO>>(advertDataDTO.Comments);
             }
             return Ok(advertListDTO);
         }

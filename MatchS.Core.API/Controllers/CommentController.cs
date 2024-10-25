@@ -1,23 +1,21 @@
 ﻿using AutoMapper;
 using MatchS.Core.Entity.Core;
-using MatchS.Core.Entity.DTO.AdvertDTO;
 using MatchS.Core.Entity.DTO.CommentDTO;
 using MatchS.Core.Service.Interfaces;
-using MatchS.Core.Service.Services;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
 namespace MatchS.Core.API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
+    [Authorize]
     public class CommentController : ControllerBase
     {
         private readonly ICommentService _commentService;
         private readonly IUserService _userService;
         private readonly IMapper _mapper;
-
 
         public CommentController(ICommentService commentService, IMapper mapper, IUserService userService)
         {
@@ -26,16 +24,19 @@ namespace MatchS.Core.API.Controllers
             _userService = userService;
         }
 
-
-        [HttpPost]
-        public async Task<IActionResult> Add([FromBody] AddCommentDTO addCommentDTO)
+        [HttpPost("AddComment")]
+        public async Task<IActionResult> AddComment([FromBody] AddCommentDTO addCommentDTO)
         {
             var commentData = _mapper.Map<Comment>(addCommentDTO);
-
             commentData.UserId = Convert.ToInt32(User.FindFirstValue(ClaimTypes.NameIdentifier));
             await _commentService.InsertAsync(commentData);
-            return Created();
+            return Ok("Yorum Oluşturuldu");
         }
-
+        [HttpDelete("DeleteComment")]
+        public async Task<IActionResult> DeleteComment(int id)
+        {
+            await _commentService.DeleteAsync(await _commentService.GetFirstOrDefaultAsync(x => x.Id == id));
+            return Ok("Yorum Silindi.");
+        }
     }
 }

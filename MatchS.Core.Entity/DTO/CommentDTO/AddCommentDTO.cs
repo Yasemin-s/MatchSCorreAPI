@@ -9,5 +9,6 @@ namespace MatchS.Core.Entity.DTO.CommentDTO
     public class AddCommentDTO
     {
         public string Content { get; set; }
+        public int AdvertId { get; set; }
     }
 }

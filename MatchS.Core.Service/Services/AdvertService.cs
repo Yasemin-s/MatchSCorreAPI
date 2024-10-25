@@ -52,5 +52,10 @@ namespace MatchS.Core.Service.Services
         {
             await _advertDatas.UpdateAsync(t);
         }
+
+        public async Task<List<Advert>> GetAdvertsWithComments()
+        {
+            return await _advertDatas.GetAdvertsWithComments();
+        }
     }
 }

@@ -7,7 +7,6 @@ namespace MatchS.Core.API.Controllers
 {
     [Route("[controller]")]
     [ApiController]
-    
     public class CategoryController : ControllerBase
     {
         private readonly ICategoryService _categoryService;
@@ -28,7 +27,5 @@ namespace MatchS.Core.API.Controllers
             var advertsDTO = _mapper.Map<List<ListAdvertDTO>>(adverts);
             return Ok(advertsDTO);
         }
-
-  
     }
 }

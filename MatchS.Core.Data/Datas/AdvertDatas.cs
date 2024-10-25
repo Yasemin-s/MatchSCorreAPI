@@ -11,5 +11,10 @@ namespace MatchS.Core.Data.Datas
         {
             _appDbContext = appDbContext;
         }
+
+        public async  Task<List<Advert>> GetAdvertsWithComments()
+        {
+            return await _appDbContext.Adverts.Where(x => x.IsActive == true).Include(x => x.Comments).ToListAsync();
+        }
     }
 }

@@ -1,4 +1,7 @@
-﻿namespace MatchS.Core.Entity.DTO.AdvertDTO
+﻿using MatchS.Core.Entity.Core;
+using MatchS.Core.Entity.DTO.CommentDTO;
+
+namespace MatchS.Core.Entity.DTO.AdvertDTO
 {
     public class ListAdvertDTO
     {
@@ -10,5 +13,6 @@
         public int CategoryId { get; set; }
         public string? CityId { get; set; }
         public string? DistrictId { get; set; }
+        public List<ListCommentDTO>? Comments { get; set; }
     }
 }

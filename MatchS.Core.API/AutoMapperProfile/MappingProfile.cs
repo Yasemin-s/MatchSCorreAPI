@@ -3,6 +3,8 @@ using MatchS.Core.Entity.Core;
 using MatchS.Core.Entity.DTO.AdvertDTO;
 using MatchS.Core.Entity.DTO.CategoryDTO;
 using MatchS.Core.Entity.DTO.CommentDTO;
+using MatchS.Core.Entity.DTO.MessageDTO;
+using MatchS.Core.Entity.DTO.ParticipantDTO;
 using MatchS.Core.Entity.DTO.UserDTO;
 
 namespace MatchS.Core.API.AutoMapperProfile
@@ -21,6 +23,10 @@ namespace MatchS.Core.API.AutoMapperProfile
             CreateMap<Advert, ListAdvertDTO>().ReverseMap();
             CreateMap<Category, AddCategoryDTO>().ReverseMap();
             CreateMap<Comment, AddCommentDTO>().ReverseMap();
+            CreateMap<Comment, ListCommentDTO>().ReverseMap();
+            CreateMap<Message, ListMessageDTO>().ReverseMap();
+            CreateMap<Message, AddMessageDTO>().ReverseMap();
+            CreateMap<Participant, ListParticipantDTO>().ReverseMap();
         }
     }
 }

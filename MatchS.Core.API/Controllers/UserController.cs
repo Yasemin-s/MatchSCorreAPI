@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using MatchS.Core.Common.City;
 using MatchS.Core.Entity.Core;
-using MatchS.Core.Entity.DTO.Cities;
 using MatchS.Core.Entity.DTO.UserDTO;
 using MatchS.Core.Service.Interfaces;
 using Microsoft.AspNetCore.Authentication;
