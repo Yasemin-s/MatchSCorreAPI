@@ -6,6 +6,7 @@ using MatchS.Core.Entity.DTO.CommentDTO;
 using MatchS.Core.Service.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 
 namespace MatchS.Core.API.Controllers
@@ -85,7 +86,9 @@ namespace MatchS.Core.API.Controllers
         [HttpPost("AddAdvert")]
         public async Task<IActionResult> AddAdvert([FromBody] AddAdvertDTO addAdvertDTO)
         {
-            int id = Convert.ToInt32(User.FindFirstValue(ClaimTypes.NameIdentifier));
+            int id = Convert.ToInt32(User.FindFirstValue(JwtRegisteredClaimNames.NameId));
+
+            int id2 = Convert.ToInt32(User.FindFirstValue(ClaimTypes.NameIdentifier));
             var userData = await _userService.GetFirstOrDefaultAsync(u => u.Id == id);
             var advertData = _mapper.Map<Advert>(addAdvertDTO);
             advertData.CityId = userData.CityId;

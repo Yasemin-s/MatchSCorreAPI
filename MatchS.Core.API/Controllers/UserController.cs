@@ -53,7 +53,7 @@ namespace MatchS.Core.API.Controllers
             await HttpContext.SignOutAsync();
             return Ok(id);
         }
-        [HttpPost("çıkışyap")]
+        [HttpPost("cikisyap")]
         public async Task<IActionResult> LogOut()
         {
             int id = Convert.ToInt32(User.FindFirstValue(ClaimTypes.NameIdentifier));
@@ -61,7 +61,7 @@ namespace MatchS.Core.API.Controllers
             return Ok(id);
         }
 
-        [HttpGet("şehrimigetir")]
+        [HttpGet("sehrimigetir")]
         public async Task<IActionResult> GetMyCity()
         {
             int userId = Convert.ToInt32(User.FindFirstValue(ClaimTypes.NameIdentifier));

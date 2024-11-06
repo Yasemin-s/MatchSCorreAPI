@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using MatchS.Core.Entity.DTO.AdvertDTO;
+using MatchS.Core.Entity.DTO.CategoryDTO;
 using MatchS.Core.Service.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -27,5 +28,20 @@ namespace MatchS.Core.API.Controllers
             var advertsDTO = _mapper.Map<List<ListAdvertDTO>>(adverts);
             return Ok(advertsDTO);
         }
+
+
+        [HttpGet("GetCategories")]
+        public async Task<IActionResult> GetCategories()
+        {
+            // Aktif kategorileri al
+            var categories = await _categoryService.GetFilterListByNoTrackAsync(c => c.IsActive == true);
+
+            // Kategorileri DTO'ya haritala
+            var categoriesListDTO = _mapper.Map<List<ListCategoryDTO>>(categories);
+
+            return Ok(categoriesListDTO);
+        }
+
+
     }
 }

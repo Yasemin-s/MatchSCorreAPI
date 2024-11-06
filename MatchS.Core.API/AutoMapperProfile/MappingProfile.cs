@@ -22,6 +22,8 @@ namespace MatchS.Core.API.AutoMapperProfile
             CreateMap<Advert, UpdateAdvertDTO>().ReverseMap();
             CreateMap<Advert, ListAdvertDTO>().ReverseMap();
             CreateMap<Category, AddCategoryDTO>().ReverseMap();
+            CreateMap<Category, ListCategoryDTO>() //deneme
+.ForMember(dest => dest.CategoryName, opt => opt.MapFrom(src => src.Name)); // src.Name, Category modelindeki isim alanıdır
             CreateMap<Comment, AddCommentDTO>().ReverseMap();
             CreateMap<Comment, ListCommentDTO>().ReverseMap();
             CreateMap<Message, ListMessageDTO>().ReverseMap();

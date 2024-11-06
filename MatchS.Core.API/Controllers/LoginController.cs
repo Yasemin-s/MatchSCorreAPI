@@ -2,10 +2,12 @@
 using MatchS.Core.Entity.Core;
 using MatchS.Core.Entity.DTO.UserDTO;
 using MatchS.Core.Service.Interfaces;
-using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using System.Text;
 
 namespace MatchS.Core.API.Controllers
 {
@@ -22,33 +24,34 @@ namespace MatchS.Core.API.Controllers
             _mapper = mapper;
         }
 
-        [HttpPost("kayıtol")]
+        [HttpPost("kayitol")]
         public async Task<IActionResult> Register([FromBody] AddUserDTO addUserDTO)
         {
             var userData = _mapper.Map<User>(addUserDTO);
             await _userService.InsertAsync(userData);
             return Created();
         }
-        [HttpPost("girişyap")]
+        [HttpPost("girisyap")]
         public async Task<IActionResult> Login([FromBody] LoginUserDTO loginUserDTO)
         {
             var userData = await _userService.LoginAsync(loginUserDTO.UserName, password: loginUserDTO.Password);
-            GetUserDTO? userDTOData = null;
 
-            if (userData != null)
+            if (userData == null)
+                return Unauthorized("Kullanıcı Bulunamadı.");
+
+            var claims = new List<Claim>
             {
-                var claims = new List<Claim>
-                {
-                    new Claim(ClaimTypes.NameIdentifier,userData.Id.ToString()),
-                    new Claim(ClaimTypes.Name,userData.UserName)
-                };
-                var claimsIdentity = new ClaimsIdentity(claims, "User");
-                var claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
-                await HttpContext.SignInAsync(claimsPrincipal);
-                userDTOData = _mapper.Map<GetUserDTO>(userData);
-            }
+                new Claim(JwtRegisteredClaimNames.Name, userData.UserName),
+                new Claim(JwtRegisteredClaimNames.NameId, userData.Id.ToString()),
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+            };
 
-            return Ok(userDTOData == null ? "Kullanıcı Bulunamadı." : userDTOData);
+            var token = new JwtSecurityToken(
+               claims: claims,
+               expires: DateTime.Now.AddHours(1)
+               );
+
+            return Ok(new { token = new JwtSecurityTokenHandler().WriteToken(token) });
         }
     }
 }

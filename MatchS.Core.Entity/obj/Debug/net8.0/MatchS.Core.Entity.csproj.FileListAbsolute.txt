@@ -9,3 +9,15 @@ C:\Users\yasem\OneDrive\Masaüstü\MobilAPI\MatchS.Core.API\MatchS.Core.Entity\o
 C:\Users\yasem\OneDrive\Masaüstü\MobilAPI\MatchS.Core.API\MatchS.Core.Entity\obj\Debug\net8.0\refint\MatchS.Core.Entity.dll
 C:\Users\yasem\OneDrive\Masaüstü\MobilAPI\MatchS.Core.API\MatchS.Core.Entity\obj\Debug\net8.0\MatchS.Core.Entity.pdb
 C:\Users\yasem\OneDrive\Masaüstü\MobilAPI\MatchS.Core.API\MatchS.Core.Entity\obj\Debug\net8.0\ref\MatchS.Core.Entity.dll
+C:\Users\yasem\OneDrive\Masaüstü\matchs\MatchS.Core.Entity\bin\Debug\net8.0\MatchS.Core.Entity.deps.json
+C:\Users\yasem\OneDrive\Masaüstü\matchs\MatchS.Core.Entity\bin\Debug\net8.0\MatchS.Core.Entity.dll
+C:\Users\yasem\OneDrive\Masaüstü\matchs\MatchS.Core.Entity\bin\Debug\net8.0\MatchS.Core.Entity.pdb
+C:\Users\yasem\OneDrive\Masaüstü\matchs\MatchS.Core.Entity\obj\Debug\net8.0\MatchS.Core.Entity.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\yasem\OneDrive\Masaüstü\matchs\MatchS.Core.Entity\obj\Debug\net8.0\MatchS.Core.Entity.AssemblyInfoInputs.cache
+C:\Users\yasem\OneDrive\Masaüstü\matchs\MatchS.Core.Entity\obj\Debug\net8.0\MatchS.Core.Entity.AssemblyInfo.cs
+C:\Users\yasem\OneDrive\Masaüstü\matchs\MatchS.Core.Entity\obj\Debug\net8.0\MatchS.Core.Entity.csproj.CoreCompileInputs.cache
+C:\Users\yasem\OneDrive\Masaüstü\matchs\MatchS.Core.Entity\obj\Debug\net8.0\MatchS.Core.Entity.sourcelink.json
+C:\Users\yasem\OneDrive\Masaüstü\matchs\MatchS.Core.Entity\obj\Debug\net8.0\MatchS.Core.Entity.dll
+C:\Users\yasem\OneDrive\Masaüstü\matchs\MatchS.Core.Entity\obj\Debug\net8.0\refint\MatchS.Core.Entity.dll
+C:\Users\yasem\OneDrive\Masaüstü\matchs\MatchS.Core.Entity\obj\Debug\net8.0\MatchS.Core.Entity.pdb
+C:\Users\yasem\OneDrive\Masaüstü\matchs\MatchS.Core.Entity\obj\Debug\net8.0\ref\MatchS.Core.Entity.dll

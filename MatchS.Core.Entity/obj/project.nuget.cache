@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9ROj5UOdAgphtHO1QEuTEVTfnU1360Fu2NPTIzdNkEzY1r3WOYYq6jHjV8n2x3gW5kfSjWqteGYRoeVm3ARF5w==",
+  "dgSpecHash": "+WaZw8FAn1cORQfC5LqxWkoj3sfvSxXUhhEM7EdCeaF/XdtRvtn3LBnx67DDbzSGsxVjvMLRqZyUNc1/pcjzbQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\yasem\\OneDrive\\Masaüstü\\MobilAPI\\MatchS.Core.API\\MatchS.Core.Entity\\MatchS.Core.Entity.csproj",
+  "projectFilePath": "C:\\Users\\yasem\\OneDrive\\Masaüstü\\matchs\\MatchS.Core.Entity\\MatchS.Core.Entity.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

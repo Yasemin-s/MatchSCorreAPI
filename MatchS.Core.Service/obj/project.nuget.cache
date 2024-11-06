@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ypC4Fq9OFNDJHxLQMxj8XOPkx+njnbMXN2dTn9w7UIkqxrq79ylACRYa9beE7Ld8ZhFjfoMVIxwAzLC1PyD7Cw==",
+  "dgSpecHash": "DFo7JoaiRAMb4rz43BtPOIqn/awfP+uas8MrtEUQp2M9NDEePXMtpOJhLjjICbDQ2WcNkFwFrn/BIzmnuSGHfQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\yasem\\OneDrive\\Masaüstü\\MobilAPI\\MatchS.Core.API\\MatchS.Core.Service\\MatchS.Core.Service.csproj",
+  "projectFilePath": "C:\\Users\\yasem\\OneDrive\\Masaüstü\\matchs\\MatchS.Core.Service\\MatchS.Core.Service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\yasem\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\yasem\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\yasem\\OneDrive\\Masaüstü\\MobilAPI\\MatchS.Core.API\\MatchS.Core.Entity\\MatchS.Core.Entity.csproj": {}
+    "C:\\Users\\yasem\\OneDrive\\Masaüstü\\matchs\\MatchS.Core.Entity\\MatchS.Core.Entity.csproj": {}
   },
   "projects": {
-    "C:\\Users\\yasem\\OneDrive\\Masaüstü\\MobilAPI\\MatchS.Core.API\\MatchS.Core.Entity\\MatchS.Core.Entity.csproj": {
+    "C:\\Users\\yasem\\OneDrive\\Masaüstü\\matchs\\MatchS.Core.Entity\\MatchS.Core.Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\yasem\\OneDrive\\Masaüstü\\MobilAPI\\MatchS.Core.API\\MatchS.Core.Entity\\MatchS.Core.Entity.csproj",
+        "projectUniqueName": "C:\\Users\\yasem\\OneDrive\\Masaüstü\\matchs\\MatchS.Core.Entity\\MatchS.Core.Entity.csproj",
         "projectName": "MatchS.Core.Entity",
-        "projectPath": "C:\\Users\\yasem\\OneDrive\\Masaüstü\\MobilAPI\\MatchS.Core.API\\MatchS.Core.Entity\\MatchS.Core.Entity.csproj",
+        "projectPath": "C:\\Users\\yasem\\OneDrive\\Masaüstü\\matchs\\MatchS.Core.Entity\\MatchS.Core.Entity.csproj",
         "packagesPath": "C:\\Users\\yasem\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\yasem\\OneDrive\\Masaüstü\\MobilAPI\\MatchS.Core.API\\MatchS.Core.Entity\\obj\\",
+        "outputPath": "C:\\Users\\yasem\\OneDrive\\Masaüstü\\matchs\\MatchS.Core.Entity\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
