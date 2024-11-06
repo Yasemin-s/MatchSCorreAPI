@@ -41,16 +41,21 @@ namespace MatchS.Core.API.Controllers
 
             var claims = new List<Claim>
             {
-                new Claim(JwtRegisteredClaimNames.Name, userData.UserName),
-                new Claim(JwtRegisteredClaimNames.NameId, userData.Id.ToString()),
-                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                new (ClaimTypes.NameIdentifier, userData.Id.ToString()),
+                new (JwtRegisteredClaimNames.Name, userData.UserName),
+                new (JwtRegisteredClaimNames.NameId, userData.Id.ToString()),
+                new (JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
             };
 
             var token = new JwtSecurityToken(
+               issuer: "yasemin",
+               audience: "yaso",
                claims: claims,
-               expires: DateTime.Now.AddHours(1)
-               );
-
+               expires: DateTime.Now.AddHours(1),
+               signingCredentials: new SigningCredentials(
+                   new SymmetricSecurityKey(Encoding.UTF8.GetBytes("yasemininsifresi24karakterliolsun")),
+                   SecurityAlgorithms.HmacSha256)
+           );
             return Ok(new { token = new JwtSecurityTokenHandler().WriteToken(token) });
         }
     }

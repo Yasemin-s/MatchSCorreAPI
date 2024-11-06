@@ -86,9 +86,16 @@ namespace MatchS.Core.API.Controllers
         [HttpPost("AddAdvert")]
         public async Task<IActionResult> AddAdvert([FromBody] AddAdvertDTO addAdvertDTO)
         {
-            int id = Convert.ToInt32(User.FindFirstValue(JwtRegisteredClaimNames.NameId));
+            var token = HttpContext.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
+            var handler = new JwtSecurityTokenHandler();
+            var jsonToken = handler.ReadToken(token) as JwtSecurityToken;
+            var claims = jsonToken?.Claims;
+            foreach (var claim in claims)
+            {
+                Console.WriteLine($"Claim: {claim.Type} - {claim.Value}");
+            }
 
-            int id2 = Convert.ToInt32(User.FindFirstValue(ClaimTypes.NameIdentifier));
+            int id = Convert.ToInt32(User.FindFirstValue(ClaimTypes.NameIdentifier));
             var userData = await _userService.GetFirstOrDefaultAsync(u => u.Id == id);
             var advertData = _mapper.Map<Advert>(addAdvertDTO);
             advertData.CityId = userData.CityId;
